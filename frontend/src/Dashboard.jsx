@@ -52,7 +52,7 @@ function Dashboard({ onLogout }) {
   const handleCompleteTask = async (taskId) => {
     const token = localStorage.getItem('token');
 
-    const response = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+    const response = await fetch(`https://smarttrack-backend-5pfj.onrender.com/api/tasks/${taskId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
