@@ -10,7 +10,7 @@ function Dashboard({ onLogout }) {
   useEffect(() => {
     const fetchTasks = async () => {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/tasks', {
+      const response = await fetch('https://smarttrack-backend-5pfj.onrender.com/api/tasks', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -23,7 +23,7 @@ function Dashboard({ onLogout }) {
     e.preventDefault();
     const token = localStorage.getItem('token');
 
-    const response = await fetch('http://localhost:5000/api/tasks', {
+    const response = await fetch('https://smarttrack-backend-5pfj.onrender.com/api/tasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function Dashboard({ onLogout }) {
   const handleDeleteTask = async (taskId) => {
     const token = localStorage.getItem('token');
 
-    await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+    await fetch(`https://smarttrack-backend-5pfj.onrender.com/api/tasks/${taskId}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     });
